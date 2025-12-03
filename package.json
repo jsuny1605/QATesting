@@ -1,0 +1,22 @@
+{
+  "name": "qatesting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "uspsTest": "playwright test src/test/Day2_120125/T1_mouseHoverUSPS.spec.ts --headed --workers=1 --project=chromium --reporter=html",
+  "bingTestLoop": "playwright test src/test/Day2_120125/T2_bingSearchLoop.spec.ts --headed --workers=1 --project=chromium --reporter=html"
+
+
+
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
+}
