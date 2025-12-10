@@ -11,7 +11,7 @@ test('Search for keyword on Bing using reusable functions @smoke', async({}) => 
 
     await page.goto('https://www.bing.com');
     await page.waitForTimeout(3000); //wait for few seconds for the next step
-    await type(page, '[name="q"]', 'playwright', 'search box' );
+    await type(page, '[name="q"]', 'cars', 'search box' );
     await page.keyboard.press('Enter');
 
 
