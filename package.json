@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
      "uspsTest": "playwright test src/test/Day2_120125/T1_mouseHoverUSPS.spec.ts --headed --workers=1 --project=chromium --reporter=html",
-  "bingTestLoop": "playwright test src/test/Day2_120125/T2_bingSearchLoop.spec.ts --headed --workers=1 --project=chromium --reporter=html"
-
+  "bingTestLoop": "playwright test src/test/Day2_120125/T2_bingSearchLoop.spec.ts --headed --workers=1 --project=chromium --project=safari --reporter=html",
+    "uspsMultipleTest": "playwright test src/test/Day3_120225/T1_uspsMultipleTests.spec.ts --headed --workers=4 --project=chromium --project=safari --reporter=html",
+    "reviewBingTest" : "playwright test src/test/Review/T1_grabSearchResults.spec.ts --headed --workers=1 --project=chromium --reporter=html",
+    "AI_8" : "playwright test src/test/ActionItems/AI_8.spec.ts --headed --workers=1 --project=chromium --reporter=html",
+    "bingSearchReusable" : "playwright test src/test/Day4_120825/bingSearchReusable.spec.ts --headed --workers=1 --project=chromium --reporter=html"
 
 
 
