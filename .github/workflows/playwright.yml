@@ -17,8 +17,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: usps searchable Test
-      run: npm run uspsMultipleTest
+    - name: bing searchable Test
+      run: npm run reviewBingTest
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
