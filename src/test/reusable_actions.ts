@@ -37,3 +37,44 @@ export async function getText(page:Page, locator:string, elementName:string){
     let result = await page.locator(locator).innerText()
     return result
 }//end of getText method
+
+//method to hover with mouse on a unique element
+export async function hover(page:Page, locator:string, elementName:string){
+    console.log('Hovering on ' + elementName)
+    await page.locator(locator).hover()
+}//end of hover method
+
+//method to hover with mouse on an element by index
+export async function hoverByIndex(page:Page, locator:string, index:number, elementName:string){
+    console.log('Hovering on ' + elementName + ' by index ' + index)
+    const elementArray = page.locator(locator)
+    await elementArray.nth(index).hover()
+}//end of hoverByIndex method
+
+//method to scroll with given x and y axis using delta
+export async function scrollBy(page:Page, xValue:number, yValue:number, elementName:string){
+    console.log('Scrolling by ' + elementName)
+    await page.mouse.wheel(xValue, yValue)
+}//end of scrollBy method
+
+//method to switch to a different browser tab
+export async function tabByClick(page: Page, locator: string, elementName: string) {
+    console.log("Clicking on " + elementName + " and waiting for new tab");
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        page.locator(locator).click()
+    ]);
+    await newPage.waitForLoadState();
+    return newPage;
+}//end of tabByClick method
+
+//method to switch to a different browser tab by clicking on element by index
+export async function tabByClickByIndex(page: Page, locator: string, index: number, elementName: string) {
+    console.log("Clicking on " + elementName + " by index " + index + " and waiting for new tab");
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        page.locator(locator).nth(index).click()
+    ]);
+    await newPage.waitForLoadState();
+    return newPage;
+}//end of tabByClick method
