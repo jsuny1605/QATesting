@@ -10,7 +10,7 @@ test('vertex pharma qa job search @ai', async({page}) => {
     await page.waitForTimeout(2000);
 
     //click on reject cookies button
-    ///await click(page, "//*[@id='onetrust-reject-all-handler']", 'reject cookies button');
+    await click(page, "//*[@id='onetrust-reject-all-handler']", 'reject cookies button');
 
     //click on careers link
     await click(page, "[class='nav-link dropdown-toggle nav-link--careers- external-links-handler']", "Careers Link");
