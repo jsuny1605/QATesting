@@ -8,7 +8,7 @@ export async function click(page:Page, locator:string, elementName:string){
     await page.locator(locator).click()
 }//end of click method
 
-//reusbale method to click on element by nth index
+//reusable method to click on element by nth index
 export async function clickByIndex(page:Page, locator:string, index:number, elementName:string){
     console.log('Clicking on ' + elementName + ' by index ' + index)
     const elementArray = page.locator(locator)
